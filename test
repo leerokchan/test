@@ -1,0 +1,9 @@
+git config user.name leerokchan
+git config user.email leerokchan@gmail.com
+git config --list입력 후 1,2번이 list목록 하단에 뜨는 지 확인, 뜨면 정상 마무리.
+q를 누르면 list표시 종료 
+------------------------------------------------------------------------------------------
+git init = git초기화
+git commit -m  개발 이력 코멘트 작성
+git push = git server로 자료 업로드
+git clone = git server의 자료를 개발 PC로 가져오기
