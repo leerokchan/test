@@ -3,7 +3,7 @@
 int main(void)
 {
    int n;
-   printf("몇 단 삼각형입니까?:");
+   printf("몇 단 사각형입니까?:");
    scanf("%d", &n);
    for (int i = 1; i <= n; i++)
    {
@@ -13,4 +13,4 @@ int main(void)
    }
 
    return 0;
-}  
+}
