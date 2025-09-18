@@ -1,18 +1,23 @@
 #include <stdio.h>
 
-int main()
+int main(void)
 {
-    int n;
+    int sum=0;
 
-    printf("정수: ");
+    puts("1부터 n까지의 총합을 구합니다.");
+
+    printf("n의 값: ");
     scanf("%d", &n);
 
-    if (n > 0)
-    printf("양수입니다.\n");
-    else if (n < 0)
-    printf("음수입니다.\n");
-    else
-    printf("0입니다.\n");
-    
+    int sum = 0;
+    int i = 1;
+
+    while (i <= n)
+    {
+        sum += i;
+        i++;
+    }
+    printf("1부터 %d까지의 총합은 %d입니다.\n", n, sum);
+
     return 0;
 }
