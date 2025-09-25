@@ -1,30 +1,27 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-#define N 5
-int main()
-{
-   int foo[N];
-   for (int i = 0; i < N; i++) {
-      printf("foo[%d] : ", i);
-      scanf("%d", &foo[i]);
+int maxof(const int foo[], int elem_cnt) {
+   int max = foo[0];
+   for (int i = 1; i < elem_cnt; i++) {
+      if (foo[i] > max) max = foo[i];
    }
-   puts("각 요소의 값");
-   for (int i = 0; i < 3; i++) {
-      printf("foo[%d] = %d\n", i, foo[i]);
-   }
-
-   return 0;
+   return max;
 }
 
-#include <stdio.h>
-int main()
+int main(void)
 {
-   int a[5] = {1, 2, 3, 4, 5};
-   int na = sizeof(a) / sizeof(a[0]);
-   printf("배열 a의 요소 개수는 %d입니다.\n", na);
-
-   for (int i = 0; i < na; i++) {
-      printf("a[%d] = %d\n", i, a[i]);
+   int number;
+   printf("사람 수: ");
+   scanf("%d", &number);
+   int *height = calloc(number, sizeof(int));
+   printf("%d명의 키를 입력하세요.\n", number);
+   for (int i = 0; i < number; i++) {
+      printf("height[%d]: ", i);
+      scanf("%d", &height[i]);
    }
+   printf("최댓값은 %d입니다.\n", maxof(height, number));
+   free(height);
+
    return 0;
 }
