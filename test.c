@@ -1,27 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int maxof(const int foo[], int elem_cnt) {
-   int max = foo[0];
-   for (int i = 1; i < elem_cnt; i++) {
-      if (foo[i] > max) max = foo[i];
-   }
-   return max;
-}
+// type형 x값과 y값을 교환
+#define swap(type , x, y) do { type t = x; x = y; y = t; } while (0)
 
-int main(void)
+
+void ary_reverse(int a[], int n)
 {
-   int number;
-   printf("사람 수: ");
-   scanf("%d", &number);
-   int *height = calloc(number, sizeof(int));
-   printf("%d명의 키를 입력하세요.\n", number);
-   for (int i = 0; i < number; i++) {
-      printf("height[%d]: ", i);
-      scanf("%d", &height[i]);
+   int i;
+   for (i = 0; i < n / 2; i++) {
+      swap(int, a[i], a[n - i - 1]);
    }
-   printf("최댓값은 %d입니다.\n", maxof(height, number));
-   free(height);
-
-   return 0;
 }
