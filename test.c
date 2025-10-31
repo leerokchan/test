@@ -3,27 +3,15 @@
 
 int main(void)
 {
-   int nx, ky;
-   puts("선형 검색");
-   printf("요소 개수: ");
-   scanf("%d", &nx);
-   int *x = calloc(nx * sizeof(int));
-   for (int i = 0; i < nx; i++)
+   void selection(int a[], int n)
    {
-      printf("x[%d]: ", i);
-      scanf("%d", &x[i]);
+      for (int i = 0; i < n - 1; i++){
+      int min = i;
+      for (int j = i + 1; j < n; j++)
+         if (a[j] < a[min])
+         min = j;
+      swap(int, a[i], a[min]);
+         
+      }
    }
-   printf("검색할 값: ");
-   scanf("%d", &ky);
-   int idx = search(x, nx, ky);
-   if (idx == -1)
-   {
-      puts("검색에 실패했습니다.");
-   }
-   else
-   {
-      printf("%d은(는) x[%d]에 있습니다.\n", ky, idx);
-   }
-   free(x);
-   return 0;
-}
+} 
